@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
+  <script type="text/javascript" src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="box-container">
+    <div class="content-body h-full">
+      <header class="profile-header bg-neutral-300"></header>
+      <main class="bg-white px-10 py-3 relative grow">
+        <!-- profile -->
+        <div class="flex flex-wrap items-center">
+          <div
+            class="profile-image me-7 relative group bg-neutral-300 rounded-full border-4 border-white overflow-hidden">
+            <img src="./../asset/icons/user.png" alt="" class="w-full h-full object-cover p-5">
+          </div>
+          <div>
+            <p class="text-3xl font-semibold">Your Name</p>
+            <p class="text-lg font-light">post title here</p>
+          </div>
+        </div>
+        <!-- end profile  -->
+
+        <!-- post upload box -->
+        <div class="p-4 bg-secondary mt-5 rounded-xl">
+          <h4 class="text-2xl font-semibold my-3 mb-5 tracking-widest">Upload Your Post</h4>
+          <form action="">
+            <input type="text" placeholder="Blog title"
+              class="w-full  rounded p-4 mb-4 placeholder:font-extralight text-lg">
+            <div>
+              <input type="file" id="file" class="hidden">
+              <label for="file" class="w-full h-[210px] bg-[#FFFFFF] block rounded cursor-pointer p-2">
+                <div class="border-dashed border-2 border-slate-400 h-full flex flex-col">
+                  <img src="./../asset/icons/image-gallery.png" alt="" class="w-12 mx-auto mt-10 mb-3">
+                  <p class="text-center">Upload your image / Video</p>
+                  <p class="text-center text-xs font-light ">Support mp4/mkv for video</p>
+                  <p class="text-center text-xs font-light ">Support JPG/PNG for video</p>
+                </div>
+              </label>
+            </div>
+
+            <!-- trix editor -->
+            <div class="edittor my-4 bg-white">
+              <input id="x" type="hidden" name="content">
+              <trix-editor input="x" class="trix-content overflow-y-auto h-60"
+                placeholder="Blog content ..."></trix-editor>
+            </div>
+            <!-- trix editor end  -->
+
+            <div class="flex justify-end mt-4 text-2xl ">
+              <button class="px-2 m-1 bg-zinc-500 text-white uppercase">Cancel</button>
+              <button class="px-2 m-1 bg-[#39A7FF] text-white uppercase">Save</button>
+            </div>
+          </form>
+        </div>
+        <!-- post upload box end -->
+      </main>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
